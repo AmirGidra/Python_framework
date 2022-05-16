@@ -5,9 +5,10 @@ from pageObjects.HomePage import HomePage
 
 
 class TestOne(BaseClass):
-    def test_end2end(self):
-        homePage = HomePage(self.driver)
-        homePage.shopItems().click()
+
+    def test_e2e(self):
+        homepage = HomePage(self.driver)
+        homepage.shopItems().click()
         products = self.driver.find_elements(by=By.XPATH, value="//div[@class='card h-100']")
         for product in products:
             productName = product.find_element(by=By.XPATH, value="div/h4/a").text
